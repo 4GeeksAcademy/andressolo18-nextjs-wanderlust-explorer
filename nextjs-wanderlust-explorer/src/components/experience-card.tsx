@@ -7,8 +7,15 @@ import {
   ratingFormatter,
 } from "@/lib/experience-formatters";
 import FavoriteButton from "@/components/favorite-button";
+import type { FavoritesState } from "@/lib/use-favorites";
 
-export default function ExperienceCard({ experience }: { experience: Experience }) {
+export default function ExperienceCard({
+  experience,
+  favorites,
+}: {
+  experience: Experience;
+  favorites: FavoritesState;
+}) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#203629]/10 bg-white shadow-sm">
       <div className="relative aspect-[4/3] bg-[#e6ebdf]">
@@ -52,7 +59,7 @@ export default function ExperienceCard({ experience }: { experience: Experience 
             {priceFormatter.format(experience.price)}
           </p>
         </div>
-        <FavoriteButton experience={experience} />
+        <FavoriteButton experience={experience} favorites={favorites} />
       </div>
     </article>
   );

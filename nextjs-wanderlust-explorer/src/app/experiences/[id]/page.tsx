@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import FavoriteButton from "@/components/favorite-button";
+import ExperienceFavorite from "@/components/experience-favorite";
 import { experiences, type Experience } from "@/lib/experiences";
 import {
   categoryLabels,
@@ -137,7 +137,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
                   <dd className="text-sm">{experience.id}</dd>
                 </div>
               </dl>
-              <FavoriteButton experience={experience} />
+              <ExperienceFavorite experience={experience} />
             </section>
           </div>
         </article>

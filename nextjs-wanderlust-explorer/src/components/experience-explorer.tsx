@@ -4,6 +4,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import ExperienceCard from "@/components/experience-card";
 import { categoryLabels } from "@/lib/experience-formatters";
 import type { Experience } from "@/lib/experiences";
+import { useFavorites } from "@/lib/use-favorites";
 
 function normalizeSearch(value: string) {
   return value.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -22,6 +23,7 @@ export default function ExperienceExplorer({
   experiences: Experience[];
 }) {
   const searchParams = useSearchParams();
+  const favorites = useFavorites();
   const pathname = usePathname();
   const query = searchParams.get("q") ?? "";
   const category = searchParams.get("category") ?? "";
@@ -122,7 +124,7 @@ export default function ExperienceExplorer({
           >
             {results.map((experience) => (
               <li key={experience.id}>
-                <ExperienceCard experience={experience} />
+                <ExperienceCard experience={experience} favorites={favorites} />
               </li>
             ))}
           </ul>

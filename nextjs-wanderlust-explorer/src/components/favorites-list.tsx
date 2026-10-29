@@ -6,7 +6,8 @@ import { experiences } from "@/lib/experiences";
 import { useFavorites } from "@/lib/use-favorites";
 
 export default function FavoritesList() {
-  const { ids, isReady, error } = useFavorites();
+  const favoriteState = useFavorites();
+  const { ids, isReady, error } = favoriteState;
   const favorites = experiences.filter((experience) => ids.includes(experience.id));
 
   if (!isReady) {
@@ -45,7 +46,7 @@ export default function FavoritesList() {
       >
         {favorites.map((experience) => (
           <li key={experience.id}>
-            <ExperienceCard experience={experience} />
+            <ExperienceCard experience={experience} favorites={favoriteState} />
           </li>
         ))}
       </ul>
