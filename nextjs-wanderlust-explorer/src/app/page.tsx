@@ -3,53 +3,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-[#f7f8f2] font-sans text-[#203629]">
-      <header className="border-b border-[#203629]/10 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5 sm:px-10">
-          <Link
-            href="/"
-            aria-label="Wanderlust Explorer, inicio"
-            className="flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-          >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 40 40"
-              fill="none"
-              className="size-10 shrink-0 text-[#426b21]"
-            >
-              <path
-                d="M3 32 16 9l8 14 5-8 9 17H3Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinejoin="round"
-              />
-              <path d="m11 18 5 4 5-4" stroke="currentColor" strokeWidth="3" />
-            </svg>
-            <span className="text-xl font-bold tracking-tight sm:text-2xl">
-              wanderlust<span className="text-[#63863d]">.</span>
-            </span>
-          </Link>
-          <nav aria-label="Navegación principal" className="flex flex-wrap justify-end gap-4">
-            <Link
-              href="/profile"
-              className="rounded-sm text-sm font-semibold text-[#426b21] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-            >
-              Mi perfil
-            </Link>
-            <Link
-              href="/favorites"
-              className="rounded-sm text-sm font-semibold text-[#426b21] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-            >
-              Favoritos
-            </Link>
-            <Link
-              href="/experiences"
-              className="rounded-sm text-sm font-semibold text-[#426b21] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-            >
-              Experiencias
-            </Link>
-          </nav>
-        </div>
-      </header>
 
       <main className="flex flex-1 flex-col">
         <section
@@ -70,7 +23,7 @@ export default function Home() {
             </p>
             <h1
               id="hero-title"
-              className="max-w-3xl text-5xl leading-[1.08] font-bold tracking-tight sm:text-6xl lg:text-7xl"
+              className="max-w-3xl text-4xl leading-[1.08] font-bold tracking-tight sm:text-6xl lg:text-7xl"
             >
               Tu próxima aventura empieza aquí.
             </h1>

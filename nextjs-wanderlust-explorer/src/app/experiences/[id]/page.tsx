@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import ExperienceFavorite from "@/components/experience-favorite";
 import { experiences, type Experience } from "@/lib/experiences";
@@ -42,38 +41,13 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
 
   return (
     <div className="flex flex-1 flex-col bg-[#f7f8f2] font-sans text-[#203629]">
-      <header className="border-b border-[#203629]/10 bg-white">
-        <nav
-          aria-label="Navegación principal"
-          className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10"
-        >
-          <Link
-            href="/"
-            className="rounded-sm text-xl font-bold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21] sm:text-2xl"
-          >
-            wanderlust<span className="text-[#63863d]">.</span>
-          </Link>
-          <Link
-            href="/favorites"
-            className="rounded-sm text-sm font-semibold text-[#426b21] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-          >
-            Favoritos
-          </Link>
-          <Link
-            href="/experiences"
-            className="rounded-sm text-sm font-semibold text-[#426b21] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#426b21]"
-          >
-            Volver a experiencias
-          </Link>
-        </nav>
-      </header>
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-10 sm:px-10 sm:py-14">
         <article>
           <p className="text-sm font-semibold uppercase tracking-widest text-[#426b21]">
             {categoryLabels[experience.category]}
           </p>
-          <h1 className="mt-3 max-w-4xl text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-4xl text-3xl leading-tight font-bold tracking-tight sm:text-5xl">
             {experience.title}
           </h1>
           <p className="mt-4 text-lg text-[#536354]">
